@@ -1,0 +1,18 @@
+{% comment %}
+    IGNORE: Interchange code reference for self:
+    <img width="200" data-interchange="[/ImageGen.ashx?width=200&image=@logo.Url, (default)], [@logo.Url, (retina)]" alt="@logo.Name">
+{% endcomment %}
+
+{% assign logo = site.data.settings.logo  %}
+{% assign seo_title = site.data.settings.seo_title  %}
+{% assign company_title = site.data.settings.company %}
+
+<div class="row">
+    <div class="medium-6 columns">
+        <a href="/" title="{{ seo_title }}" class="logo" itemprop="url">
+        <img width="230" src="{{ logo | prepend: site.assets }}" alt="{{ company_title }}" itemprop="logo"></a>
+    </div>
+</div>
+
+<!-- Important: Hamburger outside of row -->
+<a href="#off-canvas-menu" class="hamburger hide-for-large-up"><span></span></a>

@@ -1,0 +1,38 @@
+---
+layout: internal
+---
+
+<div class="row">
+
+	<!-- MAIN -->
+	<div class="large-8 columns">
+		<main class="main post">
+			<h1>{{ page.title }}</h1>
+            <h3 class="subheader">{{ page.date | date: "%d %B %Y" }}</h3>
+			{{ content }}
+		</main>
+	</div>
+
+	<!-- SIDEBAR -->
+	<div class="large-4 columns">
+		<aside class="sidebar">
+
+			<h3 class="panel">OTHER BLOG ITEMS</h3>
+
+			<ul class="small-block-grid-1">
+            {% for post in site.posts | limit: 3 %}
+                <li>
+                	<a href="{{ post.url | prepend: site.baseurl }}">
+                    	<div class="blog-tile small">
+    		                <h3>{{ post.title }} &nbsp;<i class="icon-angle-right"></i></h3>
+    		                <p>{{ post.date | date: "%d %B %Y" }}</p>
+                    	</div>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+
+		</aside>
+	</div>
+
+</div> <!-- .row -->

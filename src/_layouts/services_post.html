@@ -1,0 +1,29 @@
+---
+layout: internal
+---
+
+{% assign projects = site.pages | where: "categories", "project" %}
+
+<div class="row">
+
+	<!-- MAIN -->
+	<div class="large-6 columns">
+		<main class="main post">
+			<h1>{{ page.title }}</h1>
+			{{ content }}
+		</main>
+	</div>
+
+	<!-- SIDEBAR -->
+	<div class="large-6 columns">
+		<aside class="sidebar">
+			<h3 class="panel">RELATED PROJECTS:</h3>
+        	<ul class="media-tiles medium-block-grid-2">
+	        {% for item in projects | limit: 6 %}
+            	<li>{% include media_tile.html %}</li>
+	        {% endfor %}
+	        </ul>
+		</aside>
+	</div>
+
+</div> <!-- .row -->

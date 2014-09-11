@@ -1,0 +1,36 @@
+{% comment %}
+    Note: Navigation data is pulled from /data/settings.yml
+    Dropdown menu content is populated by cycling through all pages and including only those
+    that have the category variable (eg. 'service') passed by the node in the yaml file.
+
+    TL;DR - Loop thru YAML for navigation items => item may have children => item points at variable to filter
+{% endcomment %}
+
+{% assign navigation = site.data.settings.primary_navigation %}
+
+<ul>
+    {% comment %} Important: leave 'Home' out of the loop {% endcomment %}
+    <li class="{% if page.url == "/" %} active {% endif %}"><a href="{% if site.baseurl == '' %} / {% else %}{{ site.baseurl }}{% endif %}">Home</a></li>
+
+    {% comment %} Note: first level loop {% endcomment %}
+    {% for node in navigation | offset: 1 %}
+        <li class="{% if node.url == page.url %} active {% endif %}{% if node.second_level %} has-dropdown {% endif %}">
+            <a href="{{ node.url }}">{{ node.title }}</a>
+
+            {% comment %} Note: second level loop {% endcomment %}
+            {% if node.second_level %}
+                <ul class="dropdown">
+
+                {% comment %} Note: determine category name; 'service' or 'project' etc {% endcomment %}
+                {% assign category = node.second_level %}
+                {% assign dropdown_array = site.pages | where: "categories", category %}
+
+                {% for item in dropdown_array %}
+                    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                {% endfor %}
+
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

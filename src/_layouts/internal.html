@@ -1,0 +1,37 @@
+---
+layout: master
+---
+
+{% comment %} Note: IGNORE this template logic below. Jekyll hack. BYO logic. {% endcomment %}
+{% capture parent_section %}
+{{ page.url | replace:'/',' ' | truncatewords: 1 | remove:'...' }}
+{% endcapture %}
+
+<!-- BANNER -->
+<section class="banner">
+    <div class="banner-internal">
+        <div class="row">
+            <!-- Important: BG immediately after ROW -->
+            <div class="banner-bg show-for-medium-up"></div>
+            <div class="medium-7 columns">
+                <div class="animated fadeInLeft">
+                    <a href="/{{parent_section}}/"><h1>{{ parent_section }}</h1></a>
+                </div>
+            </div> <!-- .columns -->
+        </div> <!-- .row -->
+    </div> <!-- .banner-internal -->
+</section> <!-- .banner -->
+
+<!-- BREADCRUMBS -->
+<nav class="breadcrumbs-bar">
+    <div class="row collapse">
+        <div class="columns">
+            {% include breadcrumbs.html %}
+        </div> <!-- .columns -->
+    </div> <!-- .row -->
+</nav> <!-- .breadcrumbs-wrapper -->
+
+<!-- CONTENT -->
+<section class="content internal">
+	{{ content }}
+</div> <!-- .content -->

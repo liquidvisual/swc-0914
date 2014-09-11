@@ -1,0 +1,29 @@
+# GLOBAL SITE SETTINGS
+
+# General
+seo_title: "Scott Williams Consulting | Victoria Australia"
+title: "Scott Williams Consulting"
+company: Scott Williams Consulting PTY LTD
+logo: "/img/content/logo@2x.png"
+description: "Scott Williams Consulting delivers professional management services with a focus on innovation, especially R&D in the agricultural and veterinary industries."
+
+# Contact Info
+email: hello@scottwconsulting.com.au
+phone: (02) 555 555
+fax: (05) 555 555
+address: "PO Box 465 Creswick, Victoria 3363 Australia"
+
+# Social Networks
+linked_in: https://www.linkedin.com/company/scott-williams-consulting
+
+# Google Map
+google_map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3312.696102547119!2d151.2067078!3d-33.871722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3c36fc2c21%3A0xbf6ac40e233d3415!2sQueen+Victoria+Bldg%2C+455+George+St%2C+Sydney+NSW+2000!5e0!3m2!1sen!2sau!4v1409758534554"
+
+# Primary Navigation
+primary_navigation:
+ - {title: Home, url: /}
+ - {title: About, url: /about/}
+ - {title: Services, url: /services/, second_level: service}
+ - {title: Projects, url: /projects/, second_level: project}
+ - {title: Blog, url: /blog/}
+ - {title: Contact, url: /contact/}

@@ -1,0 +1,24 @@
+# Build settings
+markdown: kramdown
+permalink: /blog/:title
+
+# Default Variables
+# Notes: Breadcrumbs are OPT-IN inside the internal layout
+
+defaults:
+  -
+    scope:
+      path: "pages/services" # empty string for all files
+    values:
+      breadcrumbs: true
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      breadcrumbs: true
+  -
+    scope:
+      path: "pages/projects"
+    values:
+      breadcrumbs: true

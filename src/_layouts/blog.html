@@ -1,0 +1,32 @@
+---
+layout: internal
+---
+
+<!-- MAIN -->
+<main class="main">
+    <div class="row">
+        <div class="columns">
+
+            <ul class="medium-block-grid-2">
+                {% for post in site.posts | limit: 6 %}
+                <li>
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <article class="blog-tile">
+                            <h2>{{ post.title }}</h2>
+                            <p class="tagline">{{ post.date | date: "%d %B %Y" }}</p>
+                            <p class="excerpt">{{ post.excerpt | strip_html | truncate: 100 }} &nbsp;<span class="primary-color">Read more &nbsp;<i class="icon-angle-right"></i></span></p>
+                        </article>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            <!-- Pagination Controls -->
+            <p class="left"><a href="#"><i class="icon-angle-left"></i>&nbsp; RECENT BLOG ITEMS</a></p>
+            <p class="right"><a href="#">OLDER BLOG ITEMS &nbsp;<i class="icon-angle-right"></i></a></p>
+
+        </div> <!-- .columns -->
+    </div> <!-- .row -->
+</main> <!-- .main -->

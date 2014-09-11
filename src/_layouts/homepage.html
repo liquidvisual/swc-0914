@@ -1,0 +1,65 @@
+---
+layout: master
+---
+
+{% assign services = site.pages | where: "categories", "service" %}
+{% assign projects = site.pages | where: "categories", "project" %}
+
+<!-- BANNER -->
+<section class="banner">
+	<div class="banner-homepage">
+	    <div class="row">
+	        <!-- Important: BG immediately after ROW -->
+	        <div class="banner-bg show-for-medium-up"></div>
+	        <div class="medium-7 columns">
+	            <article class="banner-article animated fadeInLeft">
+	                {{ page.banner_text }}
+	                <a href="{{ page.banner_link }}" class="button tiny">Read More &nbsp;<i class="icon-angle-right"></i></a>
+	            </article>
+	        </div> <!-- .columns -->
+	    </div> <!-- .row -->
+	</div> <!-- .banner-homepage -->
+</section> <!-- .banner -->
+
+<!-- CONTENT -->
+<section class="content homepage">
+    <div class="row">
+
+		<!-- MAIN -->
+		<div class="large-8 columns">
+			<main class="main">
+
+				<h1>SERVICES</h1>
+
+				<ul class="media-tiles medium-block-grid-2">
+					{% for item in services | limit: 6 %}
+			        	<li>{% include media_tile_image.html %}</li>
+			        {% endfor %}
+				</ul>
+			</main>
+		</div>
+
+		<!-- SIDEBAR -->
+		<div class="large-4 columns">
+			<aside class="sidebar">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-1">
+					<li>
+						<h2>RECENT PROJECTS</h2>
+						{% for item in projects | limit: 3 %}
+			                <a href="{{ item.url }}">{{ item.title }} &nbsp;<i class="icon-angle-right"></i></a>
+			                <p class="tagline">{{ item.location }}</p>
+				        {% endfor %}
+					</li>
+					<li>
+						<h2>BLOG</h2>
+						{% for post in site.posts | limit: 2 %}
+							<a href="{{ post.url }}">{{ post.title }} &nbsp;<i class="icon-angle-right"></i></a>
+							<p class="tagline">{{ post.date | date: "%d %B %Y" }}</p>
+						{% endfor %}
+					</li>
+				</ul>
+			</aside>
+		</div> <!-- .columns -->
+
+	</div> <!-- .row -->
+</section> <!-- .content -->
