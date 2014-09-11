@@ -14,11 +14,13 @@ Note: You may need to install Ruby, Ruby Gems, NodeJS & Git. There are detailed 
     gem install jekyll
     git clone git@github.com:liquidvisual/swc-0914.git
     cd swc-0914
+    npm install
+    bower install
     grunt serve
     # => Now browse to http://localhost:9292
 
-You can also:
+For distribution:
 
-    grunt build # => to produce production ready files
+    grunt build # => to concat and minify etc
 
 For Windows check this [link](http://jekyllrb.com/docs/windows/#installation).
