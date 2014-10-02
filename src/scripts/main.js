@@ -1,5 +1,5 @@
 /*
-	MAIN SCRIPTS - Last updated: 11-09-14
+	MAIN SCRIPTS - Last updated: 02-10-14
 */
 //-----------------------------------------------------------------
 // Document Ready
@@ -12,6 +12,31 @@ $(document).ready(function() {
 window.onload = function(){
     NProgress.done();
 }
+
+//-----------------------------------------------------------------
+// Kickstart Foundation / Touch Conditionals
+//-----------------------------------------------------------------
+
+var isTouchDevice = $(".touch").length;
+
+if (isTouchDevice) {
+
+    // Trigger hamburger by touch on mobile - this eliminates glitch with FastClick.js
+    $(".hamburger").css("visibility", "visible").bind("touchstart", function() { $("#off-canvas-menu").trigger("open.mm"); });
+} else {
+    // Trigger hamburger with a click on desktop
+    $(".hamburger").css("visibility", "visible").bind("click", function() { $("#off-canvas-menu").trigger("open.mm"); });
+}
+
+//-----------------------------------------------------------------
+// 'MMenu' Settings
+//-----------------------------------------------------------------
+
+$("#off-canvas-menu").mmenu({
+   "offCanvas": {
+      "position": "right"
+   }
+});
 
 //-----------------------------------------------------------------
 // <= IE8 Caution Message
