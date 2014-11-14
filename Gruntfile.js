@@ -255,18 +255,18 @@ module.exports = function (grunt) {
 
   // Deploy to Github Pages
    grunt.registerTask('deploy', [
-      'shell:jekyllBuild',
-      'copy:vendor_files',
-      'copy:build',
-      'sass:temp',
-      'useminPrepare',
-      'concat',
-      'uglify',
-      'cssmin',
-      'usemin',
-      'pixrem',
-      'clean:build',
-      'buildcontrol:master',
+      // 'shell:jekyllBuild',
+      // 'copy:vendor_files',
+      // 'copy:build',
+      // 'sass:temp',
+      // 'useminPrepare',
+      // 'concat',
+      // 'uglify',
+      // 'cssmin',
+      // 'usemin',
+      // 'pixrem',
+      // 'clean:build',
+      //'buildcontrol:master',
       'buildcontrol:pages'
   ]);
 
