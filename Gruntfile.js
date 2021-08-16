@@ -20,7 +20,8 @@ module.exports = function (grunt) {
          dist: 'bin',
          port: '9292',
          takanaOn: false, // see notes in 'Watch'
-         git: 'git@github.com:liquidvisual/swc-0914.git'
+         // git: 'git@github.com:liquidvisual/swc-0914.git'
+         git: 'https://github.com/liquidvisual/swc-0914.git',
       },
       //-----------------------------------------------------
       // TAKANA - live Sass refreshing
